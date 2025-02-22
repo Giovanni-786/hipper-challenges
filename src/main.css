@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+@tailwind utilities;
+:root {
+	--font-sans: "Inter", sans-serif;
+	--border: 223, 50%, 50%;
+	--input: 223, 50%, 50%;
+	--ring: 223, 50%, 50%;
+	--background: 0, 0%, 100%;
+	--foreground: 222, 47%, 11%;
+	--primary: 222, 89%, 55%;
+	--primary-foreground: 0, 0%, 100%;
+	--secondary: 210, 40%, 96%;
+	--secondary-foreground: 222, 47%, 11%;
+	--destructive: 0, 84%, 60%;
+	--destructive-foreground: 0, 0%, 100%;
+	--muted: 210, 40%, 96%;
+	--muted-foreground: 215, 16%, 47%;
+	--accent: 210, 40%, 96%;
+	--accent-foreground: 222, 47%, 11%;
+	--popover: 0, 0%, 100%;
+	--popover-foreground: 222, 47%, 11%;
+	--card: 0, 0%, 100%;
+	--card-foreground: 222, 47%, 11%;
+	--radius: 8px;
+}
+
+@theme inline {
+	--color-hipper-pink: #cd2cc1;
+	--color-hipper-blue: #1c1594;
+	--color-hipper-aqua: #8ee3ef;
+	--color-hipper-yellow: #f2ff22;
+	--color-hipper-green: #41eb68;
+	--color-hipper-red: #ef233c;
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Modo escuro */
+.dark {
+	--background: 222, 47%, 11%;
+	--foreground: 0, 0%, 100%;
+}
+
+/* Container */
+.container {
+	@apply mx-auto px-8;
+	max-width: 1400px;
+}
+
+/* Bordas */
+.rounded-lg {
+	border-radius: var(--radius);
+}
+
+.rounded-md {
+	border-radius: calc(var(--radius) - 2px);
+}
+
+.rounded-sm {
+	border-radius: calc(var(--radius) - 4px);
+}
+
+/* Fontes */
+.font-mono {
+	font-family: SF Mono, Menlo, Monaco, Courier, monospace;
+}
+
+/* Cores */
+.border {
+	border-color: hsl(var(--border));
+}
+
+.bg-background {
+	background-color: hsl(var(--background));
+}
+
+.text-foreground {
+	color: hsl(var(--foreground));
+}
+
+/* Animações */
+@keyframes accordion-down {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--radix-accordion-content-height);
+	}
+}
+
+@keyframes accordion-up {
+	from {
+		height: var(--radix-accordion-content-height);
+	}
+	to {
+		height: 0;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-accordion-down {
+	animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+	animation: accordion-up 0.2s ease-out;
+}
+
+.animate-fadeIn {
+	animation: fadeIn 0.5s ease-out forwards;
+}
