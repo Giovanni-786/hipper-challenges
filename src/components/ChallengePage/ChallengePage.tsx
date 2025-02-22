@@ -2,64 +2,72 @@ import { useState } from 'react'
 import { useReward } from 'react-rewards'
 import { Check, Waves, Sparkles } from 'lucide-react'
 
-interface Challenge {
+interface Challenges {
   id: string
   title: string
   description: string
   completed: boolean
   emoji: string
 }
-
+interface ChallengeAndRules {
+  challenges: Challenges[] // Corrigido para ser um array
+  rules: Rule[] // Corrigido para ser um array
+}
 interface Rule {
   id: string
   description: string
   emoji: string
 }
 
-const initialChallenges: Challenge[] = [
+const initialChallenges: ChallengeAndRules[] = [
   {
-    id: '01',
-    title: 'Challenge 01',
-    description: "Share God's love with someone new today",
-    completed: false,
-    emoji: '💖',
-  },
-  {
-    id: '02',
-    title: 'Challenge 02',
-    description: 'Invite a friend to join our community',
-    completed: false,
-    emoji: '🤝',
-  },
-  {
-    id: '03',
-    title: 'Challenge 03',
-    description: 'Share your faith journey with others',
-    completed: false,
-    emoji: '🌟',
-  },
-]
-
-const rules: Rule[] = [
-  {
-    id: '1',
-    description: 'Complete all challenges within the given timeframe',
-    emoji: '⏰',
-  },
-  {
-    id: '2',
-    description: 'Use only the specified methods for sharing',
-    emoji: '📱',
-  },
-  {
-    id: '3',
-    description: 'Be respectful and compassionate in all interactions',
-    emoji: '🙏',
+    challenges: [
+      {
+        id: '01',
+        title: 'Challenge 01',
+        description: "Share God's love with someone new today",
+        completed: false,
+        emoji: '💖',
+      },
+      {
+        id: '02',
+        title: 'Challenge 02',
+        description: 'Invite a friend to join our community',
+        completed: false,
+        emoji: '🤝',
+      },
+      {
+        id: '03',
+        title: 'Challenge 03',
+        description: 'Share your faith journey with others',
+        completed: false,
+        emoji: '🌟',
+      },
+    ],
+    rules: [
+      {
+        id: '1',
+        description: 'Complete all challenges within the given timeframe',
+        emoji: '⏰',
+      },
+      {
+        id: '2',
+        description: 'Use only the specified methods for sharing',
+        emoji: '📱',
+      },
+      {
+        id: '3',
+        description: 'Be respectful and compassionate in all interactions',
+        emoji: '🙏',
+      },
+    ],
   },
 ]
 
 export function ChallengePage() {
-  const [challenges, setChallenges] = useState<Challenge[]>(initialChallenges)
+  const [challenges, setChallenges] = useState<Challenges[]>(
+    initialChallenges.flatMap((group) => group.challenges) // Junta todos os desafios em um array
+  )
   const { reward } = useReward('rewardId', 'confetti')
 
   const toggleChallenge = (challengeId: string) => {
@@ -115,8 +123,9 @@ export function ChallengePage() {
                   </div>
                   <div className="flex-shrink-0">
                     <button
+                      type="button"
                       onClick={() => toggleChallenge(challenge.id)}
-                      className={`w-8 h-8 rounded-md border-2 flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${challenge.completed ? 'border-[#41eb68] bg-[#41eb68]' : 'border-[#1c1594] hover:border-[#cd2cc1]'}`}
+                      className={`flex h-8 w-8 transform items-center justify-center rounded-md border-2 transition-all duration-300 hover:scale-110 ${challenge.completed ? 'border-[#41eb68] bg-[#41eb68]' : 'border-[#1c1594] hover:border-[#cd2cc1]'}`}
                     >
                       {challenge.completed && (
                         <Check className="w-5 h-5 text-white animate-bounce" />
@@ -135,7 +144,7 @@ export function ChallengePage() {
           </h2>
           <div className="bg-gradient-to-r from-white to-[#8ee3ef]/10 rounded-xl p-6">
             <ul className="space-y-4">
-              {rules.map((rule) => (
+              {initialChallenges[0].rules.map((rule) => (
                 <li key={rule.id} className="flex items-start space-x-3 group">
                   <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center text-xl animate-bounce">
                     {rule.emoji}
