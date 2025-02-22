@@ -1,6 +1,4 @@
 import { MailWarning, Check } from 'lucide-react'
-
-import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -27,13 +25,11 @@ const notifications = [
   },
 ]
 
-type CardProps = React.ComponentProps<typeof Card>
-
 interface ICardNotification {
   nextStep: boolean
   setNextStep: (arg0: boolean) => void
 }
-function CardNotification({ nextStep, setNextStep }: ICardNotification) {
+function CardNotification({ setNextStep }: ICardNotification) {
   return (
     <Card className="max-w-[450px] m-2.5 ">
       <CardHeader>
