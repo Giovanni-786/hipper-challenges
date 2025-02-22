@@ -17,20 +17,20 @@ interface Rule {
 const initialChallenges: Challenge[] = [
   {
     id: '01',
-    title: 'Challenge 01',
-    description: 'Build a responsive landing page',
+    title: 'Desafio 01',
+    description: 'Ligue para 1 familiar e fale do amor de Jesus',
     completed: false,
   },
   {
     id: '02',
-    title: 'Challenge 02',
-    description: 'Create an interactive form',
+    title: 'Desafio 02',
+    description: 'Poste uma foto com sua galera marcando a @hipperconference',
     completed: false,
   },
   {
     id: '03',
-    title: 'Challenge 03',
-    description: 'Implement a dynamic dashboard',
+    title: 'Desafio 03',
+    description: 'Ligue para um amigo seu e apresente Jesus',
     completed: false,
   },
 ]
@@ -77,7 +77,9 @@ export function ChallengePage() {
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-2xl font-medium">Your Challenges</h2>
+          <h2 className="text-xl font-medium text-center">
+            Seus Desafios de hoje 🎯
+          </h2>
           <div className="space-y-4">
             {challenges.map((challenge) => (
               <div
@@ -99,8 +101,8 @@ export function ChallengePage() {
                     </p>
                   </div>
                   <div className="flex-shrink-0">
-                    {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
                     <button
+                      type="button"
                       onClick={() => toggleChallenge(challenge.id)}
                       className={`flex h-6 w-6 items-center justify-center rounded-md border-2 transition-colors ${challenge.completed ? 'border-green-500 bg-green-500' : 'border-gray-300 hover:border-gray-400'}`}
                     >
