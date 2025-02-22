@@ -1,37 +1,42 @@
-import { Check } from 'lucide-react'
 import { useState } from 'react'
 import { useReward } from 'react-rewards'
+import { Check, Waves, Sparkles } from 'lucide-react'
 
 interface Challenge {
   id: string
   title: string
   description: string
   completed: boolean
+  emoji: string
 }
 
 interface Rule {
   id: string
   description: string
+  emoji: string
 }
 
 const initialChallenges: Challenge[] = [
   {
     id: '01',
-    title: 'Desafio 01',
-    description: 'Ligue para 1 familiar e fale do amor de Jesus',
+    title: 'Challenge 01',
+    description: "Share God's love with someone new today",
     completed: false,
+    emoji: '💖',
   },
   {
     id: '02',
-    title: 'Desafio 02',
-    description: 'Poste uma foto com sua galera marcando a @hipperconference',
+    title: 'Challenge 02',
+    description: 'Invite a friend to join our community',
     completed: false,
+    emoji: '🤝',
   },
   {
     id: '03',
-    title: 'Desafio 03',
-    description: 'Ligue para um amigo seu e apresente Jesus',
+    title: 'Challenge 03',
+    description: 'Share your faith journey with others',
     completed: false,
+    emoji: '🌟',
   },
 ]
 
@@ -39,14 +44,17 @@ const rules: Rule[] = [
   {
     id: '1',
     description: 'Complete all challenges within the given timeframe',
+    emoji: '⏰',
   },
   {
     id: '2',
-    description: 'Use only the specified technologies',
+    description: 'Use only the specified methods for sharing',
+    emoji: '📱',
   },
   {
     id: '3',
-    description: 'Follow the coding standards and best practices',
+    description: 'Be respectful and compassionate in all interactions',
+    emoji: '🙏',
   },
 ]
 
@@ -65,35 +73,40 @@ export function ChallengePage() {
     )
   }
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-6 flex items-center justify-center">
-      <div className="w-full max-w-4xl backdrop-blur-sm bg-white/80 rounded-2xl shadow-lg p-8 space-y-8 animate-fadeIn">
+    <div className="min-h-screen bg-gradient-to-br from-[#8ee3ef] via-white to-[#8ee3ef] p-6 flex items-center justify-center overflow-hidden relative">
+      {/* Animated wave background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJ3YXZlIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0iTTI1LDUwIEE1MCw1MCAwIDAsOSA3NSw1MCBBNTAsNTAgMCAwLDkgMjUsNTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNDQsIDIyNywgMjM5LCAwLjEpIiBzdHJva2Utd2lkdGg9IjIiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjd2F2ZSkiLz48L3N2Zz4=')] animate-[wave_15s_linear_infinite] opacity-50" />
+      </div>
+
+      <div className="w-full max-w-4xl backdrop-blur-sm bg-white/90 rounded-2xl shadow-lg p-8 space-y-8 animate-fadeIn hover:shadow-xl transition-shadow duration-300">
         <div className="text-center space-y-2">
-          <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full font-mono">
-            Welcome
+          <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] text-white text-sm rounded-full font-mono animate-pulse">
+            🌊 The Big Wave
           </span>
-          <h1 className="text-4xl font-semibold tracking-tight">
-            Hipper Challenge
+          <h1 className="text-4xl font-semibold tracking-tight bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] bg-clip-text text-transparent">
+            Challenge Board
           </h1>
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-xl font-medium text-center">
-            Seus Desafios de hoje 🎯
+          <h2 className="text-2xl font-medium text-[#1c1594] flex items-center gap-2">
+            <Sparkles className="w-6 h-6" /> Your Challenges
           </h2>
           <div className="space-y-4">
             {challenges.map((challenge) => (
               <div
                 key={challenge.id}
-                className="group relative bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-100"
+                className="group relative bg-gradient-to-r from-white to-[#8ee3ef]/10 rounded-xl p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center font-mono text-sm">
-                      {challenge.id}
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#1c1594] to-[#cd2cc1] text-white flex items-center justify-center font-mono text-sm">
+                      {challenge.emoji}
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-medium text-gray-900 mb-1">
+                    <h3 className="text-lg font-medium text-[#1c1594] mb-1">
                       {challenge.title}
                     </h3>
                     <p className="text-gray-600 text-sm">
@@ -102,13 +115,11 @@ export function ChallengePage() {
                   </div>
                   <div className="flex-shrink-0">
                     <button
-                      type="button"
                       onClick={() => toggleChallenge(challenge.id)}
-                      className={`flex h-6 w-6 items-center justify-center rounded-md border-2 transition-colors ${challenge.completed ? 'border-green-500 bg-green-500' : 'border-gray-300 hover:border-gray-400'}`}
+                      className={`w-8 h-8 rounded-md border-2 flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${challenge.completed ? 'border-[#41eb68] bg-[#41eb68]' : 'border-[#1c1594] hover:border-[#cd2cc1]'}`}
                     >
-                      <span id="rewardId" />
                       {challenge.completed && (
-                        <Check className="h-4 w-4 text-white" />
+                        <Check className="w-5 h-5 text-white animate-bounce" />
                       )}
                     </button>
                   </div>
@@ -119,13 +130,17 @@ export function ChallengePage() {
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-2xl font-medium">Rules</h2>
-          <div className="bg-gray-50 rounded-xl p-6">
-            <ul className="space-y-3">
+          <h2 className="text-2xl font-medium text-[#1c1594] flex items-center gap-2">
+            <Waves className="w-6 h-6" /> Rules
+          </h2>
+          <div className="bg-gradient-to-r from-white to-[#8ee3ef]/10 rounded-xl p-6">
+            <ul className="space-y-4">
               {rules.map((rule) => (
-                <li key={rule.id} className="flex items-start space-x-3">
-                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gray-400 mt-2" />
-                  <span className="text-gray-600 text-sm">
+                <li key={rule.id} className="flex items-start space-x-3 group">
+                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center text-xl animate-bounce">
+                    {rule.emoji}
+                  </span>
+                  <span className="text-gray-600 group-hover:text-[#1c1594] transition-colors text-sm">
                     {rule.description}
                   </span>
                 </li>

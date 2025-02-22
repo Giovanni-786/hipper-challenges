@@ -31,7 +31,7 @@ interface ICardNotification {
 }
 function CardNotification({ setNextStep }: ICardNotification) {
   return (
-    <Card className="max-w-[450px] m-2.5 ">
+    <Card className="m-2.5 max-w-[450px] border-2 border-hipper-pink">
       <CardHeader>
         <CardTitle>
           <h2>Seja bem vindo Hipper! 🌊</h2>
@@ -47,11 +47,7 @@ function CardNotification({ setNextStep }: ICardNotification) {
             <p className="font-medium text-sm leading-none">
               Regras do Desafio Hipper 2025
             </p>
-            {/* <p className="text-sm text-muted-foreground">
-              Send notifications to device.
-            </p> */}
           </div>
-          {/* <Switch /> */}
         </div>
         <div>
           {notifications.map((notification, index) => (
@@ -64,9 +60,6 @@ function CardNotification({ setNextStep }: ICardNotification) {
                 <p className="text-sm font-medium leading-none">
                   {notification.title}
                 </p>
-                {/* <p className="text-sm text-muted-foreground">
-                  {notification.description}
-                </p> */}
               </div>
             </div>
           ))}
