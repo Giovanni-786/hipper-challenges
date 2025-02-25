@@ -1,4 +1,4 @@
-import { MailWarning, Check, Sparkles } from 'lucide-react'
+import { CircleAlert, Check, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -18,13 +18,20 @@ const notifications = [
   {
     title:
       'Assim que o desafio for completado é necessário mostrar ao supervisor que esta posicionado em alguns dos QR codes',
-    description: '1 hour ago',
     emoji: '📱',
   },
   {
     title: 'Se divirta e espalhe o amor de Cristo! ❤️',
-    description: '2 hours ago',
     emoji: '🙏',
+  },
+  {
+    title: 'Acumule pontos a cada desafio concluído!',
+    emoji: '🏆',
+  },
+  {
+    title:
+      'Sorteio especial: ao final da conferência, três ganhadores levarão prêmios incríveis!',
+    emoji: '🎉',
   },
 ]
 interface ICardNotification {
@@ -34,7 +41,6 @@ interface ICardNotification {
 function CardNotification({ setNextStep }: ICardNotification) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#8ee3ef] via-white to-[#8ee3ef] p-6 flex items-center justify-center overflow-hidden relative">
-      {/* Animated wave background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJ3YXZlIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0iTTI1LDUwIEE1MCw1MCAwIDAsOSA3NSw1MCBBNTAsNTAgMCAwLDkgMjUsNTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNDQsIDIyNywgMjM5LCAwLjEpIiBzdHJva2Utd2lkdGg9IjIiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjd2F2ZSkiLz48L3N2Zz4=')] animate-[wave_15s_linear_infinite] opacity-50" />
       </div>
@@ -52,7 +58,6 @@ function CardNotification({ setNextStep }: ICardNotification) {
           </div>
           <CardTitle className="text-center">
             <h2 className="text-4xl font-semibold tracking-tight bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] bg-clip-text text-transparent flex items-center justify-center gap-2">
-              <Sparkles className="w-8 h-8 text-[#cd2cc1]" />
               Seja bem vindo Hipper!
             </h2>
           </CardTitle>
@@ -65,11 +70,11 @@ function CardNotification({ setNextStep }: ICardNotification) {
             <div className="flex items-center space-x-4">
               <div className="flex-shrink-0">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#1c1594] to-[#cd2cc1] text-white flex items-center justify-center">
-                  <MailWarning className="w-6 h-6" />
+                  <CircleAlert className="w-6 h-6" />
                 </div>
               </div>
               <div className="flex-1">
-                <p className="font-medium text-[#1c1594] text-2xl ">
+                <p className="font-medium text-[#1c1594] text-xl ">
                   Regras do Desafio Hipper 2025
                 </p>
               </div>
