@@ -1,4 +1,4 @@
-import { CircleAlert, Check, Sparkles } from 'lucide-react'
+import { CircleAlert, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Card,
