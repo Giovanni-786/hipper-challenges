@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useReward } from 'react-rewards'
 import { Check, Waves, Sparkles } from 'lucide-react'
 import LogoHipperChallenger from '../../assets/challenges.png'
@@ -54,7 +54,7 @@ const initialChallenges: ChallengeAndRules[] = [
       {
         id: '2',
         description:
-          'Assim que o desafio for finalizado, mostre para um dos supervisores que estão em um dos QR codes',
+          'Assim que o desafio for finalizado, valide com um dos supervisores que estão posicionados um dos QR codes',
         emoji: '📱',
       },
       {
@@ -70,10 +70,20 @@ export function ChallengePage() {
   const [challenges, setChallenges] = useState<Challenges[]>(
     initialChallenges.flatMap((group) => group.challenges)
   )
+  const topRef = useRef<null | HTMLDivElement>(null)
+
   const { reward } = useReward('rewardId', 'confetti')
+  useEffect(() => {
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#8ee3ef] via-white to-[#8ee3ef] p-6 flex items-center justify-center overflow-hidden relative">
+    <div
+      className="min-h-screen bg-gradient-to-br from-[#8ee3ef] via-white to-[#8ee3ef] p-6 flex items-center justify-center overflow-hidden relative"
+      ref={topRef}
+    >
       {/* Animated wave background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJ3YXZlIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0iTTI1LDUwIEE1MCw1MCAwIDAsOSA3NSw1MCBBNTAsNTAgMCAwLDkgMjUsNTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNDQsIDIyNywgMjM5LCAwLjEpIiBzdHJva2Utd2lkdGg9IjIiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjd2F2ZSkiLz48L3N2Zz4=')] animate-[wave_15s_linear_infinite] opacity-50" />
