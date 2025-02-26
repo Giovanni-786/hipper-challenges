@@ -67,12 +67,11 @@ const initialChallenges: ChallengeAndRules[] = [
 ]
 
 export function ChallengePage() {
-  const [challenges, setChallenges] = useState<Challenges[]>(
+  const [challenges] = useState<Challenges[]>(
     initialChallenges.flatMap((group) => group.challenges)
   )
   const topRef = useRef<null | HTMLDivElement>(null)
 
-  const { reward } = useReward('rewardId', 'confetti')
   useEffect(() => {
     if (topRef.current) {
       topRef.current.scrollIntoView({ behavior: 'smooth' })
