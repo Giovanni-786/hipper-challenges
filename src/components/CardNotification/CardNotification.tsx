@@ -12,27 +12,28 @@ import { cn } from '@/lib/utils'
 import LogoHipperChallenger from '../../assets/challenges.png'
 const notifications = [
   {
-    title: 'É necessário completar o desafio apenas no dia do evento',
-    description: '1 hour ago',
+    title:
+      'Para cada dia da nossa conferência vamos ter 3 desafios por dia para serem completados',
     emoji: '📅',
   },
   {
     title:
-      'Assim que o desafio for completado é necessário mostrar ao supervisor que esta posicionado em alguns dos QR codes',
-    emoji: '📱',
+      'Assim que o desafio for completado é necessário mostrar ao supervisor que esta posicionado em alguns dos QR codes para que ele possa validar',
+    emoji: '🧐',
   },
   {
-    title: 'Se divirta e espalhe o amor de Cristo! ❤️',
-    emoji: '🙏',
-  },
-  {
-    title: 'Acumule pontos a cada desafio concluído!',
+    title:
+      'Cada desafio terá um peso de 0 a 5. Acumule pontos a cada desafio concluído!',
     emoji: '🏆',
   },
   {
     title:
       'Sorteio especial: ao final da conferência, três ganhadores levarão prêmios incríveis!',
     emoji: '🎉',
+  },
+  {
+    title: 'Se divirta e espalhe o amor de Cristo! ❤️',
+    emoji: '🙏',
   },
 ]
 interface ICardNotification {
@@ -60,8 +61,8 @@ function CardNotification({ setNextStep }: ICardNotification) {
           <CardTitle className="text-center">
             <img src={LogoHipperChallenger} alt="logo-hipper-challengers" />
           </CardTitle>
-          <CardDescription className="mt-4 text-center text-lg text-gray-600">
-            Está preparado para o desafio? Clique em começar.
+          <CardDescription className="mt-4 text-center text-base text-gray-600">
+            Está preparado para o desafio? Clique em começar e vamos iniciar 🚀
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-6">
@@ -73,8 +74,8 @@ function CardNotification({ setNextStep }: ICardNotification) {
                 </div>
               </div>
               <div className="flex-1">
-                <p className="font-medium text-[#1c1594] text-lg ">
-                  Regras do Desafio Hipper 2025
+                <p className="font-medium text-[#1c1594] text-sm ">
+                  Informacoes importantes sobre o Hipper Challengers 2025
                 </p>
               </div>
             </div>
@@ -104,7 +105,7 @@ function CardNotification({ setNextStep }: ICardNotification) {
             className="w-full bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] hover:opacity-90 transition-opacity text-white font-semibold py-6 text-lg"
             onClick={() => setNextStep(true)}
           >
-            <Check className="w-5 h-5 mr-2" /> Eu aceito
+            Começar 🔥
           </Button>
         </CardFooter>
       </Card>

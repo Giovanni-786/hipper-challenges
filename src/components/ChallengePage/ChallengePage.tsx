@@ -25,22 +25,22 @@ const initialChallenges: ChallengeAndRules[] = [
     challenges: [
       {
         id: '01',
-        title: 'Challenge 01',
-        description: "Share God's love with someone new today",
+        title: 'Desafio 01',
+        description: 'Ligue para 1 familiar e fale do amor de Jesus',
         completed: false,
         emoji: '💖',
       },
       {
         id: '02',
-        title: 'Challenge 02',
-        description: 'Invite a friend to join our community',
+        title: 'Desafio 02',
+        description: 'Poste uma foto com sua galera marcando a hipper',
         completed: false,
-        emoji: '🤝',
+        emoji: '📸',
       },
       {
         id: '03',
-        title: 'Challenge 03',
-        description: 'Share your faith journey with others',
+        title: 'Desafio 03',
+        description: 'Ligue para um amigo seu e apresente Jesus',
         completed: false,
         emoji: '🌟',
       },
@@ -48,17 +48,18 @@ const initialChallenges: ChallengeAndRules[] = [
     rules: [
       {
         id: '1',
-        description: 'Complete all challenges within the given timeframe',
+        description: 'Complete todos os desafios no dia do evento',
         emoji: '⏰',
       },
       {
         id: '2',
-        description: 'Use only the specified methods for sharing',
+        description:
+          'Assim que o desafio for finalizado, mostre para um dos supervisores que estão em um dos QR codes',
         emoji: '📱',
       },
       {
         id: '3',
-        description: 'Be respectful and compassionate in all interactions',
+        description: 'Seja respeitoso e compassivo em todas as interações',
         emoji: '🙏',
       },
     ],
@@ -71,16 +72,6 @@ export function ChallengePage() {
   )
   const { reward } = useReward('rewardId', 'confetti')
 
-  const toggleChallenge = (challengeId: string) => {
-    reward()
-    setChallenges((prevChallenges) =>
-      prevChallenges.map((challenge) =>
-        challenge.id === challengeId
-          ? { ...challenge, completed: !challenge.completed }
-          : challenge
-      )
-    )
-  }
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#8ee3ef] via-white to-[#8ee3ef] p-6 flex items-center justify-center overflow-hidden relative">
       {/* Animated wave background */}
@@ -97,8 +88,8 @@ export function ChallengePage() {
         </div>
 
         <div className="space-y-6">
-          <h2 className="flex items-center gap-2 font-medium text-2xl text-hipper-blue">
-            <Sparkles className="h-6 w-6" /> Your Challenges
+          <h2 className="flex items-center gap-2 font-medium text-xl text-hipper-blue">
+            <Sparkles className="h-6 w-6" /> Desafios dia 01
           </h2>
           <div className="space-y-4 m-4">
             {challenges.map((challenge) => (
@@ -120,17 +111,6 @@ export function ChallengePage() {
                       {challenge.description}
                     </p>
                   </div>
-                  <div className="flex-shrink-0">
-                    <button
-                      type="button"
-                      onClick={() => toggleChallenge(challenge.id)}
-                      className={`flex h-8 w-8 transform items-center justify-center rounded-md border-2 transition-all duration-300 hover:scale-110 ${challenge.completed ? 'border-[#41eb68] bg-[#41eb68]' : 'border-[#1c1594] hover:border-[#cd2cc1]'}`}
-                    >
-                      {challenge.completed && (
-                        <Check className="h-5 w-5 animate-bounce text-white" />
-                      )}
-                    </button>
-                  </div>
                 </div>
               </div>
             ))}
@@ -138,8 +118,8 @@ export function ChallengePage() {
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-2xl font-medium text-[#1c1594] flex items-center gap-2">
-            <Waves className="w-6 h-6" /> Rules
+          <h2 className="text-xl font-medium text-[#1c1594] flex items-center gap-2">
+            <Waves className="w-6 h-6" /> Regras
           </h2>
           <div className="bg-gradient-to-r from-white to-[#8ee3ef]/10 rounded-xl p-6">
             <ul className="space-y-4">
