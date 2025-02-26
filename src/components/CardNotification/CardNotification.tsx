@@ -48,7 +48,7 @@ function CardNotification({ setNextStep }: ICardNotification) {
       <Card
         className={cn(
           'w-full max-w-[450px] backdrop-blur-sm bg-white/90 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fadeIn border-2',
-          'border-[#cd2cc1] hover:border-[#1c1594]'
+          'border-white '
         )}
       >
         <CardHeader>
@@ -58,14 +58,10 @@ function CardNotification({ setNextStep }: ICardNotification) {
             </span>
           </div>
           <CardTitle className="text-center">
-            {/* <h2 className="text-4xl font-semibold tracking-tight bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] bg-clip-text text-transparent flex items-center justify-center gap-2">
-              Seja bem vindo Hipper!
-            </h2> */}
-            {/* <LogoHipperChallenger /> */}
-            <img src={LogoHipperChallenger} />
+            <img src={LogoHipperChallenger} alt="logo-hipper-challengers" />
           </CardTitle>
           <CardDescription className="mt-4 text-center text-lg text-gray-600">
-            Está preparado para o desafio? Clique em aceitar e vamos comecar.
+            Está preparado para o desafio? Clique em começar.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-6">
@@ -77,7 +73,7 @@ function CardNotification({ setNextStep }: ICardNotification) {
                 </div>
               </div>
               <div className="flex-1">
-                <p className="font-medium text-[#1c1594] text-xl ">
+                <p className="font-medium text-[#1c1594] text-lg ">
                   Regras do Desafio Hipper 2025
                 </p>
               </div>

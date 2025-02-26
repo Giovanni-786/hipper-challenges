@@ -67,7 +67,7 @@ const initialChallenges: ChallengeAndRules[] = [
 
 export function ChallengePage() {
   const [challenges, setChallenges] = useState<Challenges[]>(
-    initialChallenges.flatMap((group) => group.challenges) // Junta todos os desafios em um array
+    initialChallenges.flatMap((group) => group.challenges)
   )
   const { reward } = useReward('rewardId', 'confetti')
 
@@ -93,27 +93,27 @@ export function ChallengePage() {
           <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] text-white text-sm rounded-full font-mono animate-pulse">
             🌊 The Big Wave
           </span>
-          <img src={LogoHipperChallenger} />
+          <img src={LogoHipperChallenger} alt="logo-hipper-challengers" />
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-2xl font-medium text-[#1c1594] flex items-center gap-2">
-            <Sparkles className="w-6 h-6" /> Your Challenges
+          <h2 className="flex items-center gap-2 font-medium text-2xl text-hipper-blue">
+            <Sparkles className="h-6 w-6" /> Your Challenges
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-4 m-4">
             {challenges.map((challenge) => (
               <div
                 key={challenge.id}
-                className="group relative rounded-xl bg-gradient-to-r from-white to-[#8ee3ef]/10 p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-md mr-6"
+                className="group relative mr-6 rounded-xl bg-gradient-to-r bg-white transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
               >
-                <div className="flex items-start space-x-4">
+                <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#1c1594] to-[#cd2cc1] font-mono text-sm text-white">
                       {challenge.emoji}
                     </div>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="mb-1 font-medium text-[#1c1594] text-lg">
+                    <h3 className="mb-1 font-bold text-hipper-blue text-lg">
                       {challenge.title}
                     </h3>
                     <p className="text-gray-600 text-sm">
@@ -127,7 +127,7 @@ export function ChallengePage() {
                       className={`flex h-8 w-8 transform items-center justify-center rounded-md border-2 transition-all duration-300 hover:scale-110 ${challenge.completed ? 'border-[#41eb68] bg-[#41eb68]' : 'border-[#1c1594] hover:border-[#cd2cc1]'}`}
                     >
                       {challenge.completed && (
-                        <Check className="w-5 h-5 text-white animate-bounce" />
+                        <Check className="h-5 w-5 animate-bounce text-white" />
                       )}
                     </button>
                   </div>
