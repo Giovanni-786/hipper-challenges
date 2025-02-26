@@ -12,8 +12,7 @@ import { cn } from '@/lib/utils'
 import LogoHipperChallenger from '../../assets/challenges.png'
 const notifications = [
   {
-    title:
-      'Para cada dia da nossa conferência vamos ter 3 desafios por dia para serem completados',
+    title: 'Para cada dia da nossa conferência vamos ter 3 desafios',
     emoji: '📅',
   },
   {
@@ -37,7 +36,6 @@ const notifications = [
   },
 ]
 interface ICardNotification {
-  nextStep: boolean
   setNextStep: (arg0: boolean) => void
 }
 function CardNotification({ setNextStep }: ICardNotification) {

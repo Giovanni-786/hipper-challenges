@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Waves, Sparkles } from 'lucide-react'
+import { Waves, Sparkles, ArrowLeft } from 'lucide-react'
 import LogoHipperChallenger from '../../assets/challenges.png'
+
+interface ChallengePage {
+  setNextStep: (arg0: boolean) => void
+}
 
 interface Challenges {
   id: string
@@ -66,7 +70,7 @@ const initialChallenges: ChallengeAndRules[] = [
   },
 ]
 
-export function ChallengePage() {
+export function ChallengePage({ setNextStep }: ChallengePage) {
   const [challenges] = useState<Challenges[]>(
     initialChallenges.flatMap((group) => group.challenges)
   )
@@ -83,13 +87,11 @@ export function ChallengePage() {
       className="min-h-screen bg-gradient-to-br from-[#8ee3ef] via-white to-[#8ee3ef] p-6 flex items-center justify-center overflow-hidden relative"
       ref={topRef}
     >
-      {/* Animated wave background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJ3YXZlIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0iTTI1LDUwIEE1MCw1MCAwIDAsOSA3NSw1MCBBNTAsNTAgMCAwLDkgMjUsNTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNDQsIDIyNywgMjM5LCAwLjEpIiBzdHJva2Utd2lkdGg9IjIiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjd2F2ZSkiLz48L3N2Zz4=')] animate-[wave_15s_linear_infinite] opacity-50" />
-      </div>
-
       <div className="w-full max-w-4xl backdrop-blur-sm bg-white/90 rounded-2xl shadow-lg p-8 space-y-8 animate-fadeIn hover:shadow-xl transition-shadow duration-300">
         <div className="text-center space-y-2">
+          <div onClick={() => setNextStep(false)}>
+            <ArrowLeft width={20} height={20} color="#1c1594" />
+          </div>
           <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] text-white text-sm rounded-full font-mono animate-pulse">
             🌊 The Big Wave
           </span>
