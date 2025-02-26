@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useReward } from 'react-rewards'
-import { Check, Waves, Sparkles } from 'lucide-react'
+import { Waves, Sparkles } from 'lucide-react'
 import LogoHipperChallenger from '../../assets/challenges.png'
 
 interface Challenges {
