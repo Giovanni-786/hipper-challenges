@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useReward } from 'react-rewards'
 import { Check, Waves, Sparkles } from 'lucide-react'
+import LogoHipperChallenger from '../../assets/challenges.png'
 
 interface Challenges {
   id: string
@@ -10,8 +11,8 @@ interface Challenges {
   emoji: string
 }
 interface ChallengeAndRules {
-  challenges: Challenges[] // Corrigido para ser um array
-  rules: Rule[] // Corrigido para ser um array
+  challenges: Challenges[]
+  rules: Rule[]
 }
 interface Rule {
   id: string
@@ -92,9 +93,7 @@ export function ChallengePage() {
           <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] text-white text-sm rounded-full font-mono animate-pulse">
             🌊 The Big Wave
           </span>
-          <h1 className="text-4xl font-semibold tracking-tight bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] bg-clip-text text-transparent">
-            Challenge Board
-          </h1>
+          <img src={LogoHipperChallenger} />
         </div>
 
         <div className="space-y-6">
@@ -105,16 +104,16 @@ export function ChallengePage() {
             {challenges.map((challenge) => (
               <div
                 key={challenge.id}
-                className="group relative bg-gradient-to-r from-white to-[#8ee3ef]/10 rounded-xl p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                className="group relative rounded-xl bg-gradient-to-r from-white to-[#8ee3ef]/10 p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-md mr-6"
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#1c1594] to-[#cd2cc1] text-white flex items-center justify-center font-mono text-sm">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#1c1594] to-[#cd2cc1] font-mono text-sm text-white">
                       {challenge.emoji}
                     </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-medium text-[#1c1594] mb-1">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="mb-1 font-medium text-[#1c1594] text-lg">
                       {challenge.title}
                     </h3>
                     <p className="text-gray-600 text-sm">

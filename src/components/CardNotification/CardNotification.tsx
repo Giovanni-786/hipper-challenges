@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
+import LogoHipperChallenger from '../../assets/challenges.png'
 const notifications = [
   {
     title: 'É necessário completar o desafio apenas no dia do evento',
@@ -57,9 +58,11 @@ function CardNotification({ setNextStep }: ICardNotification) {
             </span>
           </div>
           <CardTitle className="text-center">
-            <h2 className="text-4xl font-semibold tracking-tight bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] bg-clip-text text-transparent flex items-center justify-center gap-2">
+            {/* <h2 className="text-4xl font-semibold tracking-tight bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] bg-clip-text text-transparent flex items-center justify-center gap-2">
               Seja bem vindo Hipper!
-            </h2>
+            </h2> */}
+            {/* <LogoHipperChallenger /> */}
+            <img src={LogoHipperChallenger} />
           </CardTitle>
           <CardDescription className="mt-4 text-center text-lg text-gray-600">
             Está preparado para o desafio? Clique em aceitar e vamos comecar.
