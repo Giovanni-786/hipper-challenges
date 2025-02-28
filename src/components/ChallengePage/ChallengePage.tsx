@@ -66,7 +66,7 @@ const initialChallenges: ChallengeAndRules[] = [
         id: '2',
         description:
           'Ore antes de ligar/enviar o áudio e pergunte para o Espírito como você deve compartilhar essa mensagem.',
-        emoji: '📱',
+        emoji: '🕊️',
       },
       {
         id: '3',
