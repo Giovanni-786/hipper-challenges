@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Waves, Sparkles, ArrowLeft } from 'lucide-react'
+import { Waves, Sparkles, ArrowLeft, Award } from 'lucide-react'
 import LogoHipperChallenger from '../../assets/challenges.png'
 
 interface ChallengePage {
@@ -13,6 +13,7 @@ interface Challenges {
   description: string
   completed: boolean
   emoji: string
+  weight: number
 }
 interface ChallengeAndRules {
   challenges: Challenges[]
@@ -30,23 +31,29 @@ const initialChallenges: ChallengeAndRules[] = [
       {
         id: '01',
         title: 'Desafio 01',
-        description: 'Ligue para 1 familiar e fale do amor de Jesus',
+        description:
+          'Poste uma foto com sua galera marcando a @hipperconference',
         completed: false,
-        emoji: '💖',
+        emoji: '📸',
+        weight: 2,
       },
       {
         id: '02',
         title: 'Desafio 02',
-        description: 'Poste uma foto com sua galera marcando a hipper',
+        description:
+          'Ligue ou envie um áudio para um familiar e compartilhe como a esperança em Jesus te ajuda a enfrentar os desafios da vida. Pergunte sobre os desafios que ele(a) está enfrentando e ofereça uma palavra de encorajamento e oração (se a pessoa se sentir confortável',
         completed: false,
-        emoji: '📸',
+        emoji: '❤️',
+        weight: 4,
       },
       {
         id: '03',
         title: 'Desafio 03',
-        description: 'Ligue para um amigo seu e apresente Jesus',
+        description:
+          'Quebre o Gelo! Dê um Presente da Hipper Store para alguém que você não conhece. O presente pode ser qualquer coisa que esteja vendendo na Hipper',
         completed: false,
-        emoji: '🌟',
+        emoji: '🎁',
+        weight: 3,
       },
     ],
     rules: [
@@ -58,7 +65,7 @@ const initialChallenges: ChallengeAndRules[] = [
       {
         id: '2',
         description:
-          'Assim que o desafio for finalizado, valide com um dos supervisores que estão posicionados um dos QR codes',
+          'Ore antes de ligar/enviar o áudio e pergunte para o Espírito como você deve compartilhar essa mensagem.',
         emoji: '📱',
       },
       {
@@ -113,11 +120,18 @@ export function ChallengePage({ setNextStep }: ChallengePage) {
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#1c1594] to-[#cd2cc1] font-mono text-sm text-white">
                       {challenge.emoji}
                     </div>
+                    {challenge.weight && (
+                      <div className="flex items-center gap-1 px-2 py-0.5 bg-gradient-to-r from-[#f2ff22] to-[#41eb68] text-[#1c1594] text-xs font-bold rounded-full mt-1.5">
+                        <Award className="w-3 h-3 text-[#1c1594]" />
+                        <span>{challenge.weight}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="min-w-0 flex-1">
                     <h3 className="mb-1 font-bold text-hipper-blue text-lg">
                       {challenge.title}
                     </h3>
+                    {/* Challenge weight/points badge */}
                     <p className="text-gray-600 text-sm">
                       {challenge.description}
                     </p>
