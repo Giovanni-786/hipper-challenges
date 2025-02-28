@@ -30,7 +30,7 @@ const initialChallenges: ChallengeAndRules[] = [
     challenges: [
       {
         id: '01',
-        title: 'Desafio 01',
+        title: '#HipperConference',
         description:
           'Poste uma foto com sua galera marcando a @hipperconference',
         completed: false,
@@ -39,18 +39,18 @@ const initialChallenges: ChallengeAndRules[] = [
       },
       {
         id: '02',
-        title: 'Desafio 02',
+        title: '#EsperançaOnAir',
         description:
-          'Ligue ou envie um áudio para um familiar e compartilhe como a esperança em Jesus te ajuda a enfrentar os desafios da vida. Pergunte sobre os desafios que ele(a) está enfrentando e ofereça uma palavra de encorajamento e oração (se a pessoa se sentir confortável',
+          'Ligue ou envie um áudio para um familiar e compartilhe como a esperança em Jesus te ajuda a enfrentar os desafios da vida. Pergunte sobre os desafios que ele(a) está enfrentando e ofereça uma palavra de encorajamento e oração (se a pessoa se sentir confortável)',
         completed: false,
         emoji: '❤️',
         weight: 4,
       },
       {
         id: '03',
-        title: 'Desafio 03',
+        title: '#GeloQuebradoPresenteEntregue!',
         description:
-          'Quebre o Gelo! Dê um Presente da Hipper para alguém que você não conhece. O presente pode ser qualquer coisa que esteja vendendo na Hipper',
+          'Quebre o Gelo! Dê um Presente da Hipper para alguém que você não conhece. (O presente pode ser qualquer coisa que esteja vendendo na Hipper)',
         completed: false,
         emoji: '🎁',
         weight: 3,
@@ -65,7 +65,7 @@ const initialChallenges: ChallengeAndRules[] = [
       {
         id: '2',
         description:
-          'Ore antes de ligar/enviar o áudio e pergunte para o Espírito como você deve compartilhar essa mensagem.',
+          'Ore antes de ligar/enviar o áudio e pergunte para o Espírito Santo como você deve compartilhar essa mensagem.',
         emoji: '🕊️',
       },
       {
@@ -107,7 +107,7 @@ export function ChallengePage({ setNextStep }: ChallengePage) {
 
         <div className="space-y-6">
           <h2 className="flex items-center gap-2 font-medium text-xl text-hipper-blue">
-            <Sparkles className="h-6 w-6" /> Desafios dia 01
+            <Sparkles className="h-6 w-6" /> Desafios Dia 01
           </h2>
           <div className="space-y-4 m-4">
             {challenges.map((challenge) => (

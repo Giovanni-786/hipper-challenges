@@ -22,7 +22,7 @@ const notifications = [
   },
   {
     title:
-      'Cada desafio terá um peso de 0 a 5. Acumule pontos a cada desafio concluído!',
+      'Cada desafio terá um peso de 1 a 5. Acumule pontos a cada desafio concluído!',
     emoji: '🏆',
   },
   {
