@@ -50,7 +50,7 @@ const initialChallenges: ChallengeAndRules[] = [
         id: '03',
         title: 'Desafio 03',
         description:
-          'Quebre o Gelo! Dê um Presente da Hipper Store para alguém que você não conhece. O presente pode ser qualquer coisa que esteja vendendo na Hipper',
+          'Quebre o Gelo! Dê um Presente da Hipper para alguém que você não conhece. O presente pode ser qualquer coisa que esteja vendendo na Hipper',
         completed: false,
         emoji: '🎁',
         weight: 3,
