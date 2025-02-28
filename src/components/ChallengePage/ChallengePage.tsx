@@ -91,48 +91,54 @@ export function ChallengePage({ setNextStep }: ChallengePage) {
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-[#8ee3ef] via-white to-[#8ee3ef] p-6 flex items-center justify-center overflow-hidden relative"
+      className="min-h-screen bg-gradient-to-br from-[#8ee3ef] via-white to-[#8ee3ef] px-4 py-6 md:p-6 flex items-center justify-center overflow-hidden w-full"
       ref={topRef}
     >
-      <div className="w-full max-w-4xl backdrop-blur-sm bg-white/90 rounded-2xl shadow-lg p-8 space-y-8 animate-fadeIn hover:shadow-xl transition-shadow duration-300">
+      <div className="w-full max-w-4xl backdrop-blur-sm bg-white/90 rounded-2xl shadow-lg p-4 md:p-8 space-y-6 md:space-y-8 animate-fadeIn hover:shadow-xl transition-shadow duration-300">
         <div className="text-center space-y-2">
-          <div onClick={() => setNextStep(false)}>
+          <div
+            onClick={() => setNextStep(false)}
+            className="cursor-pointer inline-flex hover:bg-gray-100 p-2 rounded-full transition-colors absolute left-2 top-8"
+          >
             <ArrowLeft width={20} height={20} color="#1c1594" />
           </div>
           <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#1c1594] to-[#cd2cc1] text-white text-sm rounded-full font-mono animate-pulse">
             🌊 The Big Wave
           </span>
-          <img src={LogoHipperChallenger} alt="logo-hipper-challengers" />
+          <img
+            src={LogoHipperChallenger}
+            alt="logo-hipper-challengers"
+            className="mx-auto max-w-full h-auto"
+          />
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4 md:space-y-6">
           <h2 className="flex items-center gap-2 font-medium text-xl text-hipper-blue">
             <Sparkles className="h-6 w-6" /> Desafios Dia 01
           </h2>
-          <div className="space-y-4 m-4">
+          <div className="space-y-4 mx-0 md:mx-4">
             {challenges.map((challenge) => (
               <div
                 key={challenge.id}
-                className="group relative mr-6 rounded-xl bg-gradient-to-r bg-white transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                className="group relative rounded-xl bg-gradient-to-r bg-white transition-all duration-300 hover:scale-[1.01] hover:shadow-md p-3 md:p-4"
               >
-                <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#1c1594] to-[#cd2cc1] font-mono text-sm text-white">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <div className="flex sm:flex-col items-center sm:items-start gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#1c1594] to-[#cd2cc1] font-mono text-sm text-white flex-shrink-0">
                       {challenge.emoji}
                     </div>
                     {challenge.weight && (
-                      <div className="flex items-center gap-1 px-2 py-0.5 bg-gradient-to-r from-[#f2ff22] to-[#41eb68] text-[#1c1594] text-xs font-bold rounded-full mt-1.5">
+                      <div className="flex items-center gap-1 px-2 py-0.5 bg-gradient-to-r from-[#f2ff22] to-[#41eb68] text-[#1c1594] text-xs font-bold rounded-full sm:ml-1">
                         <Award className="w-3 h-3 text-[#1c1594]" />
                         <span>{challenge.weight}</span>
                       </div>
                     )}
                   </div>
-                  <div className="min-w-0 flex-1">
+                  <div className="flex-1">
                     <h3 className="mb-1 font-bold text-hipper-blue text-lg">
                       {challenge.title}
                     </h3>
-                    {/* Challenge weight/points badge */}
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-sm break-words">
                       {challenge.description}
                     </p>
                   </div>
@@ -142,11 +148,11 @@ export function ChallengePage({ setNextStep }: ChallengePage) {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4 md:space-y-6">
           <h2 className="text-xl font-medium text-[#1c1594] flex items-center gap-2">
             <Waves className="w-6 h-6" /> Regras
           </h2>
-          <div className="bg-gradient-to-r from-white to-[#8ee3ef]/10 rounded-xl p-6">
+          <div className="bg-gradient-to-r from-white to-[#8ee3ef]/10 rounded-xl p-4 md:p-6">
             <ul className="space-y-4">
               {initialChallenges[0].rules.map((rule) => (
                 <li key={rule.id} className="flex items-start space-x-3 group">
