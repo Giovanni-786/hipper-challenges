@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import CardNotification from '../CardNotification/CardNotification'
+// import CardNotification from '../CardNotification/CardNotification'
 import { ChallengePage } from '../ChallengePage/ChallengePage'
 import CardNotificationPreview from '../CardNotificationPreview/CardNotificationPreview'
+// import CardNotificationPreview from '../CardNotificationPreview/CardNotificationPreview'
 
 function Welcome() {
   const [nextStep, setNextStep] = useState(false)

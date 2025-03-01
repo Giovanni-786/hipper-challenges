@@ -41,7 +41,7 @@ const initialChallenges: ChallengeAndRules[] = [
         id: '02',
         title: '#ImpactoAmorIncondicionalHipper',
         description:
-          'Ligue ou envie um áudio para dois amigos(as) que ainda não conhecem a Jesus e fale sobre o AMOR INCONDICIONAL de Jesus.  Compartilhe como você experimenta esse amor e como você acredita que esse amor pode fazer a diferença na vida deles também.',
+          'Ligue ou envie um áudio para dois amigos(as) que ainda não conhecem a Jesus e fale sobre o AMOR INCONDICIONAL de Jesus.  Compartilhe como você experimenta esse amor e como você acredita que esse amor pode fazer a diferença na vida deles também. (<span class="font-bold">BÔNUS🌟: Para cada pessoa alcançada, serão acrescentados mais dois pontos</span>)',
         completed: false,
         emoji: '❤️',
         weight: 5,
