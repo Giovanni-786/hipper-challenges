@@ -30,30 +30,29 @@ const initialChallenges: ChallengeAndRules[] = [
     challenges: [
       {
         id: '01',
-        title: '#HipperConference',
+        title: '#SelfieEmTurmaHipper',
         description:
-          'Poste uma foto com sua galera marcando a @hipperconference',
+          'Aborde um grupo de pelo menos 3 pessoas que você não conhece na Hipper. Apresente-se de forma simpática, diga que você está participando dos desafios do evento e convide-os para tirar uma selfie em grupo!',
         completed: false,
-        emoji: '📸',
-        weight: 2,
+        emoji: '🤝',
+        weight: 3,
       },
       {
         id: '02',
-        title: '#EsperançaOnAir',
+        title: '#ImpactoAmorIncondicionalHipper',
         description:
-          'Ligue ou envie um áudio para um familiar e compartilhe como a esperança em Jesus te ajuda a enfrentar os desafios da vida. Pergunte sobre os desafios que ele(a) está enfrentando e ofereça uma palavra de encorajamento e oração (se a pessoa se sentir confortável)',
+          'Ligue ou envie um áudio para dois amigos(as) que ainda não conhecem a Jesus e fale sobre o AMOR INCONDICIONAL de Jesus.  Compartilhe como você experimenta esse amor e como você acredita que esse amor pode fazer a diferença na vida deles também.',
         completed: false,
         emoji: '❤️',
-        weight: 4,
+        weight: 5,
       },
       {
         id: '03',
-        title: '#GeloQuebradoPresenteEntregue!',
-        description:
-          'Quebre o Gelo! Dê um Presente da Hipper para alguém que você não conhece. (O presente pode ser qualquer coisa que esteja vendendo na Hipper)',
+        title: '#HipperColorHunter',
+        description: `Seu novo desafio é encontrar, no meio da galera, alguém que esteja vestindo um look ou esteja com algum acessório com DUAS ou MAIS CORES da paleta HIPPER! Explique que é um desafio do evento e convide-a para tirar uma foto juntos. As cores da Hipper são: <span class="text-pink-500 font-bold">PINK HIPPER</span>, <span class="text-blue-500 font-bold">BLUE HIPPER</span>, <span class="text-cyan-500 font-bold">AQUA HIPPER</span>, <span class="text-yellow-500 font-bold">YELLOW HIPPER</span>, <span class="text-green-500 font-bold">GREEN HIPPER</span> e <span class="text-red-500 font-bold">RED HIPPER</span>.`,
         completed: false,
-        emoji: '🎁',
-        weight: 3,
+        emoji: '🎨',
+        weight: 2,
       },
     ],
     rules: [
@@ -72,6 +71,18 @@ const initialChallenges: ChallengeAndRules[] = [
         id: '3',
         description: 'Seja respeitoso e compassivo em todas as interações',
         emoji: '🙏',
+      },
+      {
+        id: '4',
+        description:
+          'Esteja aberto a ouvir: Após compartilhar, mostre-se disposto a conversar mais sobre isso, caso eles demonstrem curiosidade ou façam perguntas. Respeite a resposta deles, seja qual for',
+        emoji: '👐',
+      },
+      {
+        id: '5',
+        description:
+          'Seja pessoal e autêntico: Compartilhe sua experiência de forma genuína e fale com suas próprias palavras.',
+        emoji: '🫡',
       },
     ],
   },
@@ -138,9 +149,13 @@ export function ChallengePage({ setNextStep }: ChallengePage) {
                     <h3 className="mb-1 font-bold text-hipper-blue text-lg">
                       {challenge.title}
                     </h3>
-                    <p className="text-gray-600 text-sm break-words">
-                      {challenge.description}
-                    </p>
+                    {/* biome-ignore lint/security/noDangerouslySetInnerHtmlWithChildren: <explanation> */}
+                    <p
+                      className="text-gray-600 text-sm break-words"
+                      dangerouslySetInnerHTML={{
+                        __html: challenge.description,
+                      }}
+                    />
                   </div>
                 </div>
               </div>
