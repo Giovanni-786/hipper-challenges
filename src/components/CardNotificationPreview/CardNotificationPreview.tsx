@@ -39,7 +39,7 @@ function CardNotificationPreview() {
               height={40}
             />
             <p className="text-sm font-medium text-[#1c1594]">
-              Os desafios serão liberados às 17:00
+              Novos desafios serão liberados em breve
             </p>
           </div>
         </CardContent>
