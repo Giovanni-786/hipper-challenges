@@ -49,7 +49,8 @@ const initialChallenges: ChallengeAndRules[] = [
       {
         id: '03',
         title: '#TheBigWaveWhatsHipper',
-        description: `Prepare seu WhatsApp para ser uma <strong class="text-hipper-aqua">Grande onda do amor de Jesus!</strong>  Seu desafio é enviar mensagens inspiradoras e personalizadas para <strong>DUAS pessoas</strong> de sua lista que <strong>não estarão na Hipper</strong> e precisam do amor de Cristo.  Para maior impacto, escolha contatos menos íntimos. <strong>Ore ao Espírito Santo por direção e palavras</strong, e espalhe amor dEle! (✨BÔNUS: +1 ponto por pessoa alcançada através da sua mensagem)`,
+        description:
+          'Prepare seu WhatsApp para ser uma <strong class="text-hipper-aqua">Grande onda do amor de Jesus!</strong>  Seu desafio é enviar mensagens inspiradoras e personalizadas para <strong>DUAS pessoas</strong> de sua lista que <strong>não estarão na Hipper</strong> e precisam do amor de Cristo.  Para maior impacto, escolha contatos menos íntimos. <strong>Ore ao Espírito Santo por direção e palavras</strong>, e espalhe amor dEle! <strong>(✨BÔNUS: +1 ponto por pessoa alcançada através da sua mensagem)</strong>',
         completed: false,
         emoji: '🌊',
         weight: 4,
