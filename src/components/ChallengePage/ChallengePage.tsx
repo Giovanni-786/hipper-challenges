@@ -30,29 +30,29 @@ const initialChallenges: ChallengeAndRules[] = [
     challenges: [
       {
         id: '01',
-        title: '#SelfieEmTurmaHipper',
+        title: '#StorieDeImpactoHipper',
         description:
-          'Aborde um grupo de pelo menos 3 pessoas que você não conhece na Hipper. Apresente-se de forma simpática, diga que você está participando dos desafios do evento e convide-os para tirar uma selfie em grupo!',
+          'Durante uma das pregações ou ministrações da Hipper Conference do dia de hoje, anote uma frase ou um trecho que te impactou profundamente ou te inspirou de alguma forma. Com essa frase ou trecho impactante, publique nos seus stories do instagram, marcando a <strong>@hipperconference<strong>',
         completed: false,
-        emoji: '🤝',
-        weight: 3,
+        emoji: '☄️',
+        weight: 2,
       },
       {
         id: '02',
-        title: '#ImpactoAmorIncondicionalHipper',
+        title: '#ElogioProfeticoHipper',
         description:
-          'Ligue ou envie um áudio para dois amigos(as) que ainda não conhecem a Jesus e fale sobre o AMOR INCONDICIONAL de Jesus.  Compartilhe como você experimenta esse amor e como você acredita que esse amor pode fazer a diferença na vida deles também. (<span class="font-bold">BÔNUS🌟: Para cada pessoa alcançada, serão acrescentados mais dois pontos</span>)',
+          'Escolha DUAS pessoas diferentes que você não conhece na Hipper Conference. Aborde cada uma delas individualmente e, com sinceridade e sensibilidade, faça um elogio "profético".  Isso significa:  além de elogiar algo visível (a roupa, o sorriso, o estilo), tente perceber algo além do exterior e faça um elogio que abençoe a identidade e o potencial da pessoa',
         completed: false,
-        emoji: '❤️',
-        weight: 5,
+        emoji: '🫵',
+        weight: 3,
       },
       {
         id: '03',
-        title: '#HipperColorHunter',
-        description: `Seu novo desafio é encontrar, no meio da galera, alguém que esteja vestindo um look ou esteja com algum acessório com DUAS ou MAIS CORES da paleta HIPPER! Explique que é um desafio do evento e convide-a para tirar uma foto juntos. As cores da Hipper são: <span class="text-pink-500 font-bold">PINK HIPPER</span>, <span class="text-blue-500 font-bold">BLUE HIPPER</span>, <span class="text-cyan-500 font-bold">AQUA HIPPER</span>, <span class="text-yellow-500 font-bold">YELLOW HIPPER</span>, <span class="text-green-500 font-bold">GREEN HIPPER</span> e <span class="text-red-500 font-bold">RED HIPPER</span>.`,
+        title: '#TheBigWaveWhatsHipper',
+        description: `Prepare seu WhatsApp para ser uma <strong class="text-hipper-aqua">Grande onda do amor de Jesus!</strong>  Seu desafio é enviar mensagens inspiradoras e personalizadas para <strong>DUAS pessoas</strong> de sua lista que <strong>não estarão na Hipper</strong> e precisam do amor de Cristo.  Para maior impacto, escolha contatos menos íntimos. <strong>Ore ao Espírito Santo por direção e palavras</strong, e espalhe amor dEle! (✨BÔNUS: +1 ponto por pessoa alcançada através da sua mensagem)`,
         completed: false,
-        emoji: '🎨',
-        weight: 2,
+        emoji: '🌊',
+        weight: 4,
       },
     ],
     rules: [
@@ -64,12 +64,13 @@ const initialChallenges: ChallengeAndRules[] = [
       {
         id: '2',
         description:
-          'Ore antes de ligar/enviar o áudio e pergunte para o Espírito Santo como você deve compartilhar essa mensagem.',
+          'Ore Antes e Depois: A oração é a chave para este desafio! Ore antes de escolher as pessoas, durante a escrita das mensagens e após enviá-las, para que o Espírito Santo guie suas palavras e toque os corações.',
         emoji: '🕊️',
       },
       {
         id: '3',
-        description: 'Seja respeitoso e compassivo em todas as interações',
+        description:
+          'Seja sempre respeitoso e gentil em suas mensagens. O objetivo é abençoar e transmitir amor!.',
         emoji: '🙏',
       },
       {
@@ -77,12 +78,6 @@ const initialChallenges: ChallengeAndRules[] = [
         description:
           'Esteja aberto a ouvir: Após compartilhar, mostre-se disposto a conversar mais sobre isso, caso eles demonstrem curiosidade ou façam perguntas. Respeite a resposta deles, seja qual for',
         emoji: '👐',
-      },
-      {
-        id: '5',
-        description:
-          'Seja pessoal e autêntico: Compartilhe sua experiência de forma genuína e fale com suas próprias palavras.',
-        emoji: '🫡',
       },
     ],
   },
@@ -125,7 +120,7 @@ export function ChallengePage({ setNextStep }: ChallengePage) {
 
         <div className="space-y-4 md:space-y-6">
           <h2 className="flex items-center gap-2 font-medium text-xl text-hipper-blue">
-            <Sparkles className="h-6 w-6" /> Desafios Dia 02
+            <Sparkles className="h-6 w-6" /> Desafios Dia 03
           </h2>
           <div className="space-y-4 mx-0 md:mx-4">
             {challenges.map((challenge) => (
