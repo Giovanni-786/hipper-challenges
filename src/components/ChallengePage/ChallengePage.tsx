@@ -30,27 +30,18 @@ const initialChallenges: ChallengeAndRules[] = [
     challenges: [
       {
         id: '01',
-        title: '#StorieDeImpactoHipper',
+        title: '#NoTopoDaBigWaveHipper',
         description:
-          'Durante uma das pregações ou ministrações da Hipper Conference do dia de hoje, anote uma frase ou um trecho que te impactou profundamente ou te inspirou de alguma forma. Com essa frase ou trecho impactante, publique nos seus stories do instagram, marcando a <strong>@hipperconference<strong>',
+          ' Prepare-se para alcançar o topo e sentir a adrenalina da "Big Wave" na parede de escalada da Hipper Conference! 💪 Seu desafio é ESCALAR a parede e chegar até o TOPO!  Lá em cima, mostre sua alegria e superação e peça para UM AMIGO(A) tirar uma FOTO ',
         completed: false,
-        emoji: '☄️',
-        weight: 2,
-      },
-      {
-        id: '02',
-        title: '#ElogioProfeticoHipper',
-        description:
-          'Escolha DUAS pessoas diferentes que você não conhece na Hipper Conference. Aborde cada uma delas individualmente e, com sinceridade e sensibilidade, faça um elogio "profético".  Isso significa:  além de elogiar algo visível (a roupa, o sorriso, o estilo), tente perceber algo além do exterior e faça um elogio que abençoe a identidade e o potencial da pessoa',
-        completed: false,
-        emoji: '🫵',
+        emoji: '🧗',
         weight: 3,
       },
       {
-        id: '03',
-        title: '#TheBigWaveWhatsHipper',
+        id: '02',
+        title: '#EcoDaBigWaveHipper',
         description:
-          'Prepare seu WhatsApp para ser uma <strong class="text-hipper-aqua">Grande onda do amor de Jesus!</strong>  Seu desafio é enviar mensagens inspiradoras e personalizadas para <strong>DUAS pessoas</strong> de sua lista que <strong>não estarão na Hipper</strong> e precisam do amor de Cristo.  Para maior impacto, escolha contatos menos íntimos. <strong>Ore ao Espírito Santo por direção e palavras</strong>, e espalhe amor dEle! <strong>(✨BÔNUS: +1 ponto por pessoa alcançada através da sua mensagem)</strong>',
+          'A "Big Wave" da Hipper Conference te transformou?  Então, prepare-se para gerar um "Eco da Big Wave", levando a mensagem de Cristo para além dos muros da Hipper! 📢 Seu desafio agora é <strong>compartilhar seu TESTEMUNHO pessoal da Hipper Conference com ALGUÉM que PRECISA CONHECER A JESUS e que NÃO participou do evento</strong> <strong>(✨BÔNUS: +1 ponto por pessoa alcançada através da sua mensagem)</strong>',
         completed: false,
         emoji: '🌊',
         weight: 4,
@@ -77,8 +68,8 @@ const initialChallenges: ChallengeAndRules[] = [
       {
         id: '4',
         description:
-          'Esteja aberto a ouvir: Após compartilhar, mostre-se disposto a conversar mais sobre isso, caso eles demonstrem curiosidade ou façam perguntas. Respeite a resposta deles, seja qual for',
-        emoji: '👐',
+          'Pense "Fora da Caixa": Desafie-se a escolher uma pessoa com quem você NÃO TEM MUITA INTIMIDADE, alguém que talvez esteja fora do seu círculo cristão usual. Pode ser um colega de trabalho/estudo, um vizinho, um conhecido mais distante, ou até mesmo alguém que você encontra casualmente no dia a dia',
+        emoji: '📦',
       },
     ],
   },
@@ -121,7 +112,8 @@ export function ChallengePage({ setNextStep }: ChallengePage) {
 
         <div className="space-y-4 md:space-y-6">
           <h2 className="flex items-center gap-2 font-medium text-xl text-hipper-blue">
-            <Sparkles className="h-6 w-6" /> Desafios Dia 04
+            <Sparkles className="h-6 w-6" /> Desafios do Ultimo dia da Hipper!
+            🚨
           </h2>
           <div className="space-y-4 mx-0 md:mx-4">
             {challenges.map((challenge) => (
