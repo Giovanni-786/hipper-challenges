@@ -121,7 +121,7 @@ export function ChallengePage({ setNextStep }: ChallengePage) {
 
         <div className="space-y-4 md:space-y-6">
           <h2 className="flex items-center gap-2 font-medium text-xl text-hipper-blue">
-            <Sparkles className="h-6 w-6" /> Desafios Dia 03
+            <Sparkles className="h-6 w-6" /> Desafios Dia 04
           </h2>
           <div className="space-y-4 mx-0 md:mx-4">
             {challenges.map((challenge) => (
